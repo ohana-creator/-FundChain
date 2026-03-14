@@ -1,10 +1,15 @@
 {
-  "name": "-fundchain",
+  "name": "fundchain",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000-\u0000F\u0000u\u0000n\u0000d\u0000C\u0000h\u0000a\u0000i\u0000n\u0000\r\u0000 \u0000",
+  "description": "FundChain smart contract project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx hardhat test test/FundChain.test.ts",
+    "test:all": "npx hardhat test",
+    "test:payments": "npx hardhat run scripts/test-payments.ts --network hardhat",
+    "deploy:hardhat": "npx hardhat run scripts/deploy.ts --network hardhat",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.ts --network sepolia",
+    "interact:hardhat": "npx hardhat run scripts/interact.ts --network hardhat"
   },
   "repository": {
     "type": "git",
@@ -17,9 +22,14 @@
     "url": "https://github.com/ohana-creator/-FundChain/issues"
   },
   "homepage": "https://github.com/ohana-creator/-FundChain#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
+    "@types/node": "^25.5.0",
+    "hardhat": "^2.22.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
   "dependencies": {
-    "hardhat": "^3.1.12",
-    "npx": "^10.2.2",
-    "test": "^3.3.0"
+    "dotenv": "^17.3.1"
   }
 }
