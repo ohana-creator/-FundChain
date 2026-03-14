@@ -9,7 +9,8 @@
     "test:payments": "npx hardhat run scripts/test-payments.ts --network hardhat",
     "deploy:hardhat": "npx hardhat run scripts/deploy.ts --network hardhat",
     "deploy:sepolia": "npx hardhat run scripts/deploy.ts --network sepolia",
-    "interact:hardhat": "npx hardhat run scripts/interact.ts --network hardhat"
+    "interact:hardhat": "npx hardhat run scripts/interact.ts --network hardhat",
+    "backend:dev": "npx ts-node backend/src/index.ts"
   },
   "repository": {
     "type": "git",
