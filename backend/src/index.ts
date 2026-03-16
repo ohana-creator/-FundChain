@@ -3,6 +3,7 @@ import cors from 'cors';
 import { ethers } from 'ethers';
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
+import * as path from 'path';
 
 dotenv.config();
 
@@ -22,7 +23,7 @@ let contractAddress: string;
 let abi: any[];
 
 try {
-  const deployment = JSON.parse(fs.readFileSync('../deployments.json', 'utf-8'));
+  const deployment = JSON.parse(fs.readFileSync(path.join(__dirname, '../../deployments.json'), 'utf-8'));
   contractAddress  = deployment.address;
   abi              = deployment.abi;
   console.log(`📄 Contract loaded: ${contractAddress}`);

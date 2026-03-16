@@ -8,6 +8,7 @@ pragma solidity ^0.8.20;
  *         Campaigns are funded in ETH. Funds are only released
  *         to the owner if the goal is met before the deadline.
  *         Contributors can claim refunds if the campaign fails.
+ *         Version 2
  */
 contract FundChain {
     // ─────────────────────────────────────────────

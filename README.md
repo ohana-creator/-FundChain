@@ -70,34 +70,64 @@ event Refunded(uint256 indexed campaignId, address indexed contributor, uint256 
 
 ### Prerequisites
 - Node.js 20+
-- MetaMask browser extension
-- Sepolia ETH from [faucet.sepolia.dev](https://faucet.sepolia.dev)
+- MetaMask browser extension (for Sepolia deployment)
+- Sepolia ETH from [faucet.sepolia.dev](https://faucet.sepolia.dev) (for testnet)
 
-### 1. Install & compile
+### 1. Install dependencies
 
 ```bash
 npm install
-npx hardhat compile
-
-
-npm test
-npm run deploy:hardhat
-npm run interact:hardhat
-npm run deploy:sepolia
-npx hardhat run interact.ts --network hardhat
-
-
 ```
 
-### 2. Configure environment
+### 2. Compile smart contract
 
 ```bash
-cp .env.example .env
+npx hardhat compile
 ```
 
-```env
-# .env
-SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY
+### 3. Run tests
+
+```bash
+npm test
+```
+
+### 4. Deploy locally (for development)
+
+```bash
+# Start local Hardhat network
+npx hardhat node
+
+# In another terminal, deploy contract
+npm run deploy:hardhat
+```
+
+### 5. Run the application
+
+```bash
+# Start backend API server
+npm run backend:dev
+
+# In another terminal, serve frontend
+cd frontend/src && python3 -m http.server 8080
+```
+
+The app will be available at:
+- Frontend: http://localhost:8080
+- Backend API: http://localhost:3333
+
+### 6. Deploy to Sepolia testnet (optional)
+
+```bash
+# Configure .env with your RPC URL and private key
+echo "SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/YOUR_API_KEY" > .env
+echo "DEPLOYER_PRIVATE_KEY=0xYOUR_PRIVATE_KEY" >> .env
+
+# Deploy
+npm run deploy:sepolia
+
+# Interact
+npm run interact:hardhat  # or interact:sepolia
+```
 DEPLOYER_PRIVATE_KEY=0x...   # Development wallet only — never use mainnet keys
 ETHERSCAN_API_KEY=...
 ```

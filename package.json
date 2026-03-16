@@ -25,12 +25,17 @@
   "homepage": "https://github.com/ohana-creator/-FundChain#readme",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^6.1.2",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/node": "^25.5.0",
     "hardhat": "^2.22.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "dotenv": "^17.3.1"
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "ethers": "^6.16.0",
+    "express": "^5.2.1"
   }
 }
