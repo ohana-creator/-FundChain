@@ -1,2 +1,30 @@
-node_modules/
+# Hardhat / Solidity
+artifacts/
+cache/
+typechain/
+typechain-types/
+
+# Variáveis de ambiente (NUNCA commitar chaves privadas)
 .env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+
+# Build do frontend
+frontend/dist/
+frontend/build/
+frontend/.next/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
